@@ -13,7 +13,21 @@ public class PhotoUrlPopulator
 {
     static readonly string[] Urls = new string[]
     {
-        // TODO: atlas コマンド実行後、generate-udon-atlas の出力に置き換える
+        // ── page1 ──
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page1/atlas/group01.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page1/atlas/group02.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page1/atlas/group03.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page1/atlas/group04.jpg",
+        // ── page2 ──
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page2/atlas/group01.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page2/atlas/group02.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page2/atlas/group03.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page2/atlas/group04.jpg",
+        // ── page3 ──
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page3/atlas/group01.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page3/atlas/group02.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page3/atlas/group03.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page3/atlas/group04.jpg",
     };
 
     [MenuItem("VRChat/Populate Photo URLs")]
