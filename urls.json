@@ -199,7 +199,7 @@
       }
     ]
   },
-  "lastUpdated": "2026-08-25T23:09:39.615Z",
+  "lastUpdated": "2026-08-25T23:09:46.824Z",
   "atlases": {
     "page1": [
       {
@@ -255,6 +255,36 @@
       },
       {
         "url": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page2/atlas/group04.jpg",
+        "columns": [
+          6,
+          7
+        ]
+      }
+    ],
+    "page3": [
+      {
+        "url": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page3/atlas/group01.jpg",
+        "columns": [
+          0,
+          1
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page3/atlas/group02.jpg",
+        "columns": [
+          2,
+          3
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page3/atlas/group03.jpg",
+        "columns": [
+          4,
+          5
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page3/atlas/group04.jpg",
         "columns": [
           6,
           7
