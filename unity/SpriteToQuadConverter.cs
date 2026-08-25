@@ -9,13 +9,34 @@ using UnityEditor;
 /// 1. このファイルを Assets/Editor/ フォルダに入れる
 /// 2. Hierarchyで写真の親オブジェクトを選択
 /// 3. メニュー → VRChat → Convert Sprites to Quads
-/// 4. 生成された「PhotoWall_Quads」オブジェクトを確認
+/// 4. ページ番号を入力してConvert（生成物は自動で「PhotoWall_Quads_PageN」になる）
 /// 5. VRCPhotoWall スクリプトをアタッチし、Quads を photoRenderers に登録
 /// </summary>
-public class SpriteToQuadConverter : MonoBehaviour
+public class SpriteToQuadConverter : EditorWindow
 {
+    private int _pageNumber = 1;
+
     [MenuItem("VRChat/Convert Sprites to Quads")]
-    static void ConvertSpritesToQuads()
+    static void Open()
+    {
+        GetWindow<SpriteToQuadConverter>(true, "Convert Sprites to Quads");
+    }
+
+    void OnGUI()
+    {
+        EditorGUILayout.HelpBox("Hierarchyで写真の親オブジェクトを選択した状態で実行してください。", MessageType.Info);
+        _pageNumber = EditorGUILayout.IntField("ページ番号", _pageNumber);
+
+        GUI.enabled = _pageNumber >= 1;
+        if (GUILayout.Button("Convert"))
+        {
+            ConvertSpritesToQuads(_pageNumber);
+            Close();
+        }
+        GUI.enabled = true;
+    }
+
+    static void ConvertSpritesToQuads(int pageNumber)
     {
         GameObject selected = Selection.activeGameObject;
         if (selected == null)
@@ -37,8 +58,9 @@ public class SpriteToQuadConverter : MonoBehaviour
             name = "PhotoWall_Material"
         };
 
-        // Quads の親オブジェクトを作成
-        GameObject quadParent = new GameObject("PhotoWall_Quads");
+        // Quads の親オブジェクトを作成（PhotoRendererSetup が期待する名前で直接生成する）
+        string parentName = $"PhotoWall_Quads_Page{pageNumber}";
+        GameObject quadParent = new GameObject(parentName);
         if (selected.transform.parent != null)
             quadParent.transform.SetParent(selected.transform.parent);
         quadParent.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
@@ -68,7 +90,7 @@ public class SpriteToQuadConverter : MonoBehaviour
             quad.GetComponent<MeshRenderer>().sharedMaterial = mat;
 
             // 不要なColliderを削除
-            DestroyImmediate(quad.GetComponent<Collider>());
+            UnityEngine.Object.DestroyImmediate(quad.GetComponent<Collider>());
 
             count++;
         }
@@ -79,11 +101,11 @@ public class SpriteToQuadConverter : MonoBehaviour
         Debug.Log($"[SpriteToQuadConverter] {count}個のQuadを生成しました → {quadParent.name}");
         EditorUtility.DisplayDialog(
             "完了",
-            $"{count}個のQuadを生成しました。\n\n" +
+            $"{count}個のQuadを「{parentName}」として生成しました。\n\n" +
             "次の手順:\n" +
-            "1. PhotoWall_Quads に VRCPhotoWall スクリプトをアタッチ\n" +
-            "2. photoRenderers に全Quadを列順でドラッグ\n" +
-            "3. photoUrls に generate-udon の出力をペースト",
+            "1. VRChat → Setup Photo Renderers で photoRenderers を自動登録\n" +
+            "2. loader の atlas コマンドでアトラスを生成・アップロード\n" +
+            "3. VRChat → Populate Photo URLs でURLを反映",
             "OK"
         );
 
