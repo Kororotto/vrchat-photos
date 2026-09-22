@@ -14,26 +14,31 @@ public class PhotoRendererSetup
             return;
         }
 
-        GameObject page1 = GameObject.Find("PhotoWall_Quads_Page1");
-        GameObject page2 = GameObject.Find("PhotoWall_Quads_Page2");
-        GameObject page3 = GameObject.Find("PhotoWall_Quads_Page3");
-
-        if (page1 == null || page2 == null || page3 == null)
+        const int PageCount = 5;
+        var pages = new GameObject[PageCount];
+        var missing = new System.Collections.Generic.List<int>();
+        for (int i = 0; i < PageCount; i++)
         {
+            pages[i] = GameObject.Find($"PhotoWall_Quads_Page{i + 1}");
+            if (pages[i] == null) missing.Add(i + 1);
+        }
+
+        if (missing.Count > 0)
+        {
+            var lines = new System.Collections.Generic.List<string>();
+            for (int i = 0; i < PageCount; i++)
+                lines.Add($"Page{i + 1}: {(pages[i] == null ? "❌ なし" : "✓")}");
+
             EditorUtility.DisplayDialog("エラー",
-                $"見つからないオブジェクト:\n" +
-                $"Page1: {(page1 == null ? "❌ なし" : "✓")}\n" +
-                $"Page2: {(page2 == null ? "❌ なし" : "✓")}\n" +
-                $"Page3: {(page3 == null ? "❌ なし" : "✓")}\n\n" +
-                "PhotoWall_Quads_Page1/2/3 の名前を確認してください。",
+                $"見つからないオブジェクト:\n{string.Join("\n", lines)}\n\n" +
+                $"PhotoWall_Quads_Page1〜{PageCount} の名前を確認してください。",
                 "OK");
             return;
         }
 
         var renderers = new System.Collections.Generic.List<Renderer>();
-        renderers.AddRange(page1.GetComponentsInChildren<Renderer>());
-        renderers.AddRange(page2.GetComponentsInChildren<Renderer>());
-        renderers.AddRange(page3.GetComponentsInChildren<Renderer>());
+        foreach (GameObject page in pages)
+            renderers.AddRange(page.GetComponentsInChildren<Renderer>());
 
         SerializedObject so = new SerializedObject(wall);
         SerializedProperty prop = so.FindProperty("photoRenderers");
