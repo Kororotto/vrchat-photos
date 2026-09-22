@@ -5,10 +5,10 @@ using UnityEditor;
 // Urls は loader の `generate-udon-atlas` コマンドの出力で置き換える。
 // 手順:
 //   1. cd loader && npm run build
-//   2. node dist/index.js atlas --page 1   (page 2, 3 も同様に実行)
+//   2. node dist/index.js atlas --page 1   (page 2〜5 も同様に実行)
 //   3. node dist/index.js generate-udon-atlas
-//   4. 出力された12個のURL文字列で下記 Urls 配列を置き換える
-//      (group01→04 × page1→3 の順、1枚=2列/8写真分のアトラス画像)
+//   4. 出力された20個のURL文字列で下記 Urls 配列を置き換える
+//      (group01→04 × page1→5 の順、1枚=2列/8写真分のアトラス画像)
 public class PhotoUrlPopulator
 {
     static readonly string[] Urls = new string[]
@@ -28,6 +28,16 @@ public class PhotoUrlPopulator
         "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page3/atlas/group02.jpg",
         "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page3/atlas/group03.jpg",
         "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page3/atlas/group04.jpg",
+        // ── page4 ──
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page4/atlas/group01.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page4/atlas/group02.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page4/atlas/group03.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page4/atlas/group04.jpg",
+        // ── page5 ──
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/atlas/group01.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/atlas/group02.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/atlas/group03.jpg",
+        "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/atlas/group04.jpg",
     };
 
     [MenuItem("VRChat/Populate Photo URLs")]
@@ -42,9 +52,9 @@ public class PhotoUrlPopulator
             return;
         }
 
-        if (Urls.Length != 12)
+        if (Urls.Length != 20)
         {
-            Debug.LogWarning($"[PhotoUrlPopulator] Urls が12個ではありません（{Urls.Length}個）。generate-udon-atlas の出力と一致しているか確認してください。");
+            Debug.LogWarning($"[PhotoUrlPopulator] Urls が20個ではありません（{Urls.Length}個）。generate-udon-atlas の出力と一致しているか確認してください。");
         }
 
         VRCPhotoWall wall = Object.FindObjectOfType<VRCPhotoWall>();
