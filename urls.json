@@ -263,9 +263,75 @@
           "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page4/wide/24.png"
         ]
       }
+    ],
+    "page5": [
+      {
+        "portrait": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/portrait/01.png",
+        "wide": [
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/01.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/02.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/03.png"
+        ]
+      },
+      {
+        "portrait": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/portrait/02.png",
+        "wide": [
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/04.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/05.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/06.png"
+        ]
+      },
+      {
+        "portrait": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/portrait/03.png",
+        "wide": [
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/07.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/08.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/09.png"
+        ]
+      },
+      {
+        "portrait": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/portrait/04.png",
+        "wide": [
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/10.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/11.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/12.png"
+        ]
+      },
+      {
+        "portrait": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/portrait/05.png",
+        "wide": [
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/13.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/14.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/15.png"
+        ]
+      },
+      {
+        "portrait": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/portrait/06.png",
+        "wide": [
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/16.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/17.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/18.png"
+        ]
+      },
+      {
+        "portrait": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/portrait/07.png",
+        "wide": [
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/19.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/20.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/21.png"
+        ]
+      },
+      {
+        "portrait": "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/portrait/08.png",
+        "wide": [
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/22.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/23.png",
+          "https://raw.githubusercontent.com/Kororotto/vrchat-photos/main/photos/page5/wide/24.png"
+        ]
+      }
     ]
   },
-  "lastUpdated": "2026-09-22T11:43:18.890Z",
+  "lastUpdated": "2026-09-22T11:44:05.614Z",
   "atlases": {
     "page1": [
       {
